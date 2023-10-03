@@ -1,0 +1,169 @@
+main {
+    display: grid;
+    grid-template-columns: 3fr 1fr; 
+    grid-template-rows: minmax(230px, 250px);
+    grid-template-areas:
+        "main aside"
+        "article aside";
+    gap: 20px;
+    padding: 20px;
+}
+
+.encabezado {
+    grid-area: main;
+    background-color: #f0f0f0;
+    padding: 20px;
+    text-align: center;
+    max-height: 240px;
+}
+
+.recetas {
+    display: flex;
+    grid-area: article;
+    flex-direction: column; 
+    align-items: flex-start;
+}
+
+.recetas h3{
+  color: #0077b6;
+  align-self: center;
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+
+.recetas section h3{
+  font-size: 20px;
+  text-align: center;
+  margin: 5px;
+}
+
+.recetas section {
+  align-self: center;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 36px;
+    color: #333;
+}
+
+h2 {
+    font-size: 24px;
+    color: #666;
+}
+
+.recetas{
+  flex: 1;
+}
+
+
+.menu-content {
+  display: none;
+}
+
+.menu-btn {
+  background-color: #008CBA;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.menu-btn:hover {
+  background-color: #60c8ff;
+  color: #f76108;
+  font-size: 20px;
+
+}
+
+.menu-btn:focus + .menu-content {
+  display: block;
+  margin-bottom: 20px;
+}
+
+.menu-btn:focus{
+    font-size: 20px;
+}
+
+.menu-content-2 {
+  display: none;
+}
+
+.menu-btn-2 {
+  background-color: #008CBA;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.menu-btn-2:hover {
+  background-color: #60c8ff;
+  color: #f76108;
+  font-size: 20px;
+}
+
+.menu-btn-2:focus + .menu-content-2 {
+  display: block;
+  margin-bottom: 20px;
+}
+
+.menu-btn-2:focus{
+    font-size: 20px;
+}
+
+.aside {
+    grid-area: aside;
+  height: 100%;
+  padding: 20px;
+  background-color: #f0f0f0;
+}
+
+.aside h3 {
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+.aside img {
+    max-width: 100%;
+    height: auto;
+}
+
+.aside ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.aside li {
+    margin-bottom: 10px;
+}
+
+.aside a {
+    text-decoration: none;
+    color: #0077b6;
+    transition: 0.5s;
+}
+
+.aside div {
+    margin-top: 5px;
+    width: 200px;
+    display: flex;
+    transition: 0.5s;
+}
+
+.aside div:hover{
+    width: 210px;
+}
+
+.aside div a{
+    margin-bottom: 20px;
+    font-size: 15px;
+    text-align: center;
+}
+
+.aside a:hover {
+    text-decoration: underline;
+    color: #f76108;
+}
