@@ -58,7 +58,13 @@ h2 {
 
 
 .menu-content {
-  display: none;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+}
+
+.menu-content ol{
+    max-width: 80%;
 }
 
 .menu-btn {
@@ -78,7 +84,7 @@ h2 {
 }
 
 .menu-btn:focus + .menu-content {
-  display: block;
+  display: flex;
   margin-bottom: 20px;
 }
 
@@ -88,8 +94,12 @@ h2 {
 
 .menu-content-2 {
   display: none;
+  flex-direction: column;
+  align-items: center;
 }
-
+.menu-content-2 ol {
+    max-width: 80%;
+}
 .menu-btn-2 {
   background-color: #008CBA;
   color: #fff;
@@ -106,7 +116,8 @@ h2 {
 }
 
 .menu-btn-2:focus + .menu-content-2 {
-  display: block;
+  display: flex;
+  justify-items: center;
   margin-bottom: 20px;
 }
 
@@ -114,11 +125,19 @@ h2 {
     font-size: 20px;
 }
 
+#instrucciones{
+    margin-top: 15px;
+}
+
+
 .aside {
     grid-area: aside;
-  height: 100%;
-  padding: 20px;
-  background-color: #f0f0f0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    padding: 20px;
+    background-color: #f0f0f0;
 }
 
 .aside h3 {
@@ -146,18 +165,18 @@ h2 {
     transition: 0.5s;
 }
 
-.aside div {
+.img_container {
     margin-top: 5px;
-    width: 200px;
+    width: 80%;
     display: flex;
     transition: 0.5s;
 }
 
-.aside div:hover{
-    width: 210px;
+.img_container:hover{
+    width: 90%;
 }
 
-.aside div a{
+.img_container a{
     margin-bottom: 20px;
     font-size: 15px;
     text-align: center;
@@ -166,4 +185,62 @@ h2 {
 .aside a:hover {
     text-decoration: underline;
     color: #f76108;
+}
+
+@media (max-width: 700px) {
+    main{
+        grid-template-columns: 1fr; 
+        grid-template-rows: 1fr, repeat(2, 2fr);
+        grid-template-areas:
+        "main"
+        "article"
+        "aside";
+    }
+
+    .img_container{
+        max-width: 60%;
+        width: 50%;
+    }
+
+    .img_container:hover{
+        width: 60%;
+    }
+
+    .menu-content ul {
+        max-width: 70%;
+    }
+
+    .menu-content-2 ul{
+        max-width: 70%;
+    }
+
+}
+
+@media (min-height: 800px) {
+    main{
+        grid-template-columns: 1fr; 
+        grid-template-rows: 1fr, repeat(2, 2fr);
+        grid-template-areas:
+        "main"
+        "article"
+        "aside";
+    }
+
+    .img_container{
+        max-width: 60%;
+        width: 50%;
+    }
+
+    .img_container:hover{
+        width: 60%;
+    }
+
+    .menu-content ul {
+        max-width: 70%;
+    }
+
+    .menu-content-2 ul{
+        max-width: 70%;
+    }
+
 }
